@@ -1,0 +1,17 @@
+# Terraform state and local data
+*.tfstate
+*.tfstate.*
+*.tfstate.backup
+.terraform/
+terraform.tfplan
+
+# Sensitive variable files (keep terraform.tfvars committed for exercises)
+# *.tfvars
+
+# OS and editor noise
+.DS_Store
+*.swp
+*.swo
+
+# Claude Code working directory — always exclude
+.claude/
