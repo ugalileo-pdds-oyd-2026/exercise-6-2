@@ -223,7 +223,27 @@ Plan: 1 to add, 0 to change, 0 to destroy.
 ### Task 4 — Target Group (terraform plan excerpt)
 
 ```
-<!-- placeholder -->
+$ terraform plan -var-file=terraform.tfvars
+
+  # aws_lb_target_group.api will be created
+  + resource "aws_lb_target_group" "api" {
+      + name        = "mediastream-api-tg"
+      + port        = 80
+      + protocol    = "HTTP"
+      + target_type = "instance"
+      + vpc_id      = "vpc-07a057c2de7173651"
+
+      + health_check {
+          + healthy_threshold   = 2
+          + interval            = 30
+          + matcher             = "200"
+          + path                = "/"
+          + protocol            = "HTTP"
+          + unhealthy_threshold = 3
+        }
+    }
+
+Plan: 2 to add, 0 to change, 0 to destroy.
 ```
 
 ### Task 5 — ALB, Listener, Attachment (terraform plan excerpt)

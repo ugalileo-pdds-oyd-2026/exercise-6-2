@@ -19,3 +19,22 @@ resource "aws_security_group" "alb" {
 
   tags = { Name = "mediastream-alb-sg" }
 }
+
+resource "aws_lb_target_group" "api" {
+  name        = "mediastream-api-tg"
+  protocol    = "HTTP"
+  port        = 80
+  target_type = "instance"
+  vpc_id      = data.aws_vpc.main.id
+
+  health_check {
+    path                = "/"
+    protocol            = "HTTP"
+    matcher             = "200"
+    interval            = 30
+    healthy_threshold   = 2
+    unhealthy_threshold = 3
+  }
+
+  tags = { Name = "mediastream-api-tg" }
+}
