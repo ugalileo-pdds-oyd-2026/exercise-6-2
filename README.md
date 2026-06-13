@@ -284,11 +284,20 @@ target_group_arn = "arn:aws:elasticloadbalancing:us-east-1:439426070073:targetgr
 ### Task 7 — terraform state list
 
 ```
-<!-- placeholder: contents of evidence/state-list.txt -->
+data.aws_instance.api
+data.aws_subnets.public
+data.aws_vpc.main
+aws_lb.main
+aws_lb_listener.http
+aws_lb_target_group.api
+aws_lb_target_group_attachment.api
+aws_security_group.alb
 ```
 
 ### Task 7 — terraform output
 
 ```
-<!-- placeholder: contents of evidence/outputs.txt -->
+alb_arn          = "arn:aws:elasticloadbalancing:us-east-1:439426070073:loadbalancer/app/mediastream-alb/48dfa6b70dbf47de"
+alb_dns_name     = "mediastream-alb-602667321.us-east-1.elb.amazonaws.com"
+target_group_arn = "arn:aws:elasticloadbalancing:us-east-1:439426070073:targetgroup/mediastream-api-tg/c14f1956178fc893"
 ```
