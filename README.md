@@ -185,7 +185,15 @@ Success! The configuration is valid.
 ### Task 2 — Data Sources (terraform plan)
 
 ```
-<!-- placeholder -->
+$ terraform plan -var-file=terraform.tfvars
+data.aws_vpc.main: Reading...
+data.aws_instance.api: Reading...
+data.aws_vpc.main: Read complete after 1s [id=vpc-07a057c2de7173651]
+data.aws_subnets.public: Reading...
+data.aws_subnets.public: Read complete after 0s [id=us-east-1]
+data.aws_instance.api: Read complete after 2s [id=i-00b0ea81d9a6ba3bf]
+
+No changes. Your infrastructure matches the configuration.
 ```
 
 ### Task 3 — ALB Security Group (terraform plan excerpt)
