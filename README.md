@@ -249,7 +249,15 @@ Plan: 2 to add, 0 to change, 0 to destroy.
 ### Task 5 — ALB, Listener, Attachment (terraform plan excerpt)
 
 ```
-<!-- placeholder -->
+$ terraform plan -var-file=terraform.tfvars
+
+  # aws_lb.main will be created
+  # aws_lb_listener.http will be created
+  # aws_lb_target_group.api will be created
+  # aws_lb_target_group_attachment.api will be created
+  # aws_security_group.alb will be created
+
+Plan: 5 to add, 0 to change, 0 to destroy.
 ```
 
 ### Task 6 — terraform apply
