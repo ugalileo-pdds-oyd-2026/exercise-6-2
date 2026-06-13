@@ -150,13 +150,36 @@ See [## Evidence](#evidence) section below.
 ### Setup Apply
 
 ```
-<!-- placeholder: terraform apply output from setup/ -->
+aws_vpc.main: Creating...
+aws_vpc.main: Creation complete after 12s [id=vpc-07a057c2de7173651]
+aws_internet_gateway.main: Creating...
+aws_subnet.public[0]: Creating...
+aws_subnet.public[1]: Creating...
+aws_security_group.ec2: Creating...
+aws_internet_gateway.main: Creation complete after 1s [id=igw-021c407dab116b2c2]
+aws_route_table.public: Creating...
+aws_route_table.public: Creation complete after 1s [id=rtb-0216ce691793aeb0f]
+aws_security_group.ec2: Creation complete after 4s [id=sg-0e1fc97e7eed60259]
+aws_subnet.public[0]: Creation complete after 12s [id=subnet-036e189dd57b4b7fb]
+aws_subnet.public[1]: Creation complete after 12s [id=subnet-0db585e45274205af]
+aws_instance.api: Creating...
+aws_route_table_association.public[1]: Creation complete after 1s [id=rtbassoc-09269e9432cee417f]
+aws_route_table_association.public[0]: Creation complete after 1s [id=rtbassoc-00bd1debf55301dcb]
+aws_instance.api: Creation complete after 13s [id=i-00b0ea81d9a6ba3bf]
+
+Apply complete! Resources: 9 added, 0 changed, 0 destroyed.
+
+Outputs:
+
+instance_id = "i-00b0ea81d9a6ba3bf"
+vpc_id = "vpc-07a057c2de7173651"
 ```
 
 ### Task 1 — Variables (terraform validate)
 
 ```
-<!-- placeholder -->
+$ terraform validate
+Success! The configuration is valid.
 ```
 
 ### Task 2 — Data Sources (terraform plan)
