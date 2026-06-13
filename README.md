@@ -263,7 +263,22 @@ Plan: 5 to add, 0 to change, 0 to destroy.
 ### Task 6 — terraform apply
 
 ```
-<!-- placeholder -->
+$ terraform apply -var-file=terraform.tfvars -auto-approve
+
+aws_lb_target_group.api: Creation complete after 2s [id=arn:aws:elasticloadbalancing:us-east-1:439426070073:targetgroup/mediastream-api-tg/c14f1956178fc893]
+aws_lb_target_group_attachment.api: Creation complete after 0s
+aws_security_group.alb: Creation complete after 4s [id=sg-00dc75af73ea53637]
+aws_lb.main: Creating...
+aws_lb.main: Creation complete after 3m3s [id=arn:aws:elasticloadbalancing:us-east-1:439426070073:loadbalancer/app/mediastream-alb/48dfa6b70dbf47de]
+aws_lb_listener.http: Creation complete after 0s [id=arn:aws:elasticloadbalancing:us-east-1:439426070073:listener/app/mediastream-alb/48dfa6b70dbf47de/3a0d32701d4631e9]
+
+Apply complete! Resources: 5 added, 0 changed, 0 destroyed.
+
+Outputs:
+
+alb_arn      = "arn:aws:elasticloadbalancing:us-east-1:439426070073:loadbalancer/app/mediastream-alb/48dfa6b70dbf47de"
+alb_dns_name = "mediastream-alb-602667321.us-east-1.elb.amazonaws.com"
+target_group_arn = "arn:aws:elasticloadbalancing:us-east-1:439426070073:targetgroup/mediastream-api-tg/c14f1956178fc893"
 ```
 
 ### Task 7 — terraform state list
