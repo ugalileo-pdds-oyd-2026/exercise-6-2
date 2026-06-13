@@ -199,7 +199,25 @@ No changes. Your infrastructure matches the configuration.
 ### Task 3 — ALB Security Group (terraform plan excerpt)
 
 ```
-<!-- placeholder -->
+$ terraform plan -var-file=terraform.tfvars
+
+Terraform will perform the following actions:
+
+  # aws_security_group.alb will be created
+  + resource "aws_security_group" "alb" {
+      + description = "Allow HTTP traffic to the ALB"
+      + egress      = [
+          + { from_port = 0, to_port = 0, protocol = "-1", cidr_blocks = ["0.0.0.0/0"] },
+        ]
+      + ingress     = [
+          + { from_port = 80, to_port = 80, protocol = "tcp", cidr_blocks = ["0.0.0.0/0"] },
+        ]
+      + name        = "mediastream-alb-sg"
+      + vpc_id      = "vpc-07a057c2de7173651"
+      + tags        = { "Name" = "mediastream-alb-sg" }
+    }
+
+Plan: 1 to add, 0 to change, 0 to destroy.
 ```
 
 ### Task 4 — Target Group (terraform plan excerpt)
